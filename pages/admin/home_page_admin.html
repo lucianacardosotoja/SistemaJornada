@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Página Inicial</title>
+  <link rel="stylesheet" href="./../../css/style.css"> </style>
+</head>
+<body>
+    <div id="header-container"></div>
+  <h1>Bem-vindo, Administrador!</h1>
+
+  <p>Escolha uma ação:</p>
+
+  <ul>
+    <li><a href="./ajustar_pontos.html">Registrar Ponto</a></li>
+    <li><a href="./escalas_semanais_admin.html">Gerenciar Escalas Semanais</a></li>
+    <li><a href="./listar_funcionarios.html">Listar os Funcionários</a></li>
+    <li><a href="./relatorios_funcionarios.html">Relatórios de Funcionários</a></li>
+  </ul>
+  <div id="footer-container"></div>
+  <script>
+      async function loadComponents() {
+          const headerResponse = await fetch('./../../components/header.html');
+          const headerContent = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerContent;
+          
+          const footerResponse = await fetch('./../../components/footer.html');
+          const footerContent = await footerResponse.text();
+          document.getElementById('footer-container').innerHTML = footerContent;
+      }
+      loadComponents();
+  </script>
+</body>
+</html>

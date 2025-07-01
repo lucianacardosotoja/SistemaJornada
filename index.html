@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessar o Sistema</title>
+  <link rel="stylesheet" href="./css/style.css"> </head>
+<body>
+  <div id="header-container"></div>
+  <div id="login-container">
+      <h2>Login</h2>
+      
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="senha" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+          <br>  
+        <p> Não possui conta?  <a href="./pages/cadastro.html"> <strong> Cadastra-se aqui!</strong> </a></p>
+        <p> Esqueceu a senha?  <a href="./pages/recuperar_acesso.html"> <strong> Recuperar Acesso!</strong> </a></p>
+      
+      </form>
+    <br>
+    </div>  
+  <div id="footer-container"></div>
+  <script type="module">
+    import { fazerLogin } from './js/login.js';
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("loginForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+        await fazerLogin(email, senha);
+      });
+    });
+    async function loadComponents() {
+      const headerResponse = await fetch('./components/header_login.html');
+      const headerContent = await headerResponse.text();
+      document.getElementById('header-container').innerHTML = headerContent;
+      
+      const footerResponse = await fetch('./components/footer.html');
+      const footerContent = await footerResponse.text();
+      document.getElementById('footer-container').innerHTML = footerContent;
+     }
+    loadComponents();
+  </script>
+  
+</body>
+</html>

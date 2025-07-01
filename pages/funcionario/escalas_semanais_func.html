@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Escala Semanal</title>
+  <link rel="stylesheet" href="./../../css/style.css"> </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  <h1>Minha Escala Semanal</h1>
+
+  <ul id="escala-lista">
+    <li>Carregando escala...</li>
+  </ul>
+
+  <script type="module" src="./../../js/funcionario/escalas_semanais_func.js"></script>
+  <div id="footer-container"></div>
+  <script>
+      async function loadComponents() {
+          const headerResponse = await fetch('./../../components/header.html');
+          const headerContent = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerContent;
+          
+          const footerResponse = await fetch('./../../components/footer.html');
+          const footerContent = await footerResponse.text();
+          document.getElementById('footer-container').innerHTML = footerContent;
+      }
+      loadComponents();
+  </script>
+
+</body>
+</html>

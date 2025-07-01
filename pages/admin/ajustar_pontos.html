@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajustar Ponto - Admin</title>
+  <link rel="stylesheet" href="./../../css/style.css" />
+</head>
+<body>
+  <div id="header-container"></div>
+<main class="container">
+  <h1>Ajustar Registro de Ponto</h1>
+
+  <section class="busca-container">
+    <label for="email">Email do Funcionário:</label>
+    <input type="email" id="email" placeholder="exemplo@empresa.com" />
+
+    <label for="data">Data:</label>
+    <input type="date" id="data" />
+
+    <button id="buscar">Buscar Registros</button>
+  </section>
+
+  <section class="novo-registro-container">
+    <h2>Novo Registro</h2>
+
+    <label for="novoTipo">Tipo:</label>
+    <select id="novoTipo">
+      <option value="">Selecione</option>
+      <option value="Entrada">Entrada</option>
+      <option value="Saída">Saída</option>
+    </select>
+
+    <label for="novoHorario">Horário:</label>
+    <input type="time" id="novoHorario" />
+
+    <button id="adicionar">Adicionar Registro</button>
+  </section>
+
+  <div id="mensagem"></div>
+
+  <h2>Registros:</h2>
+  <ul id="registros"></ul>
+</main>
+
+
+  <div id="footer-container"></div>
+
+  <script>
+    async function loadComponents() {
+      const headerResponse = await fetch('./../../components/header.html');
+      const headerContent = await headerResponse.text();
+      document.getElementById('header-container').innerHTML = headerContent;
+
+      const footerResponse = await fetch('./../../components/footer.html');
+      const footerContent = await footerResponse.text();
+      document.getElementById('footer-container').innerHTML = footerContent;
+    }
+    loadComponents();
+  </script>
+
+  <script type="module" src="./../../js/admin/ajustar_pontos.js"></script>
+</body>
+</html>

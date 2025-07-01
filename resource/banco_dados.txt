@@ -1,0 +1,24 @@
+```
++--------------------------------+         +-------------------------------+
+|         funcionario            |         |             escalas           |
++--------------------------------+         +-------------------------------+
+| _id: ObjectId                  |<------->| _id: ObjectId                 |
+| email: String                  |    1:N  | data: Date                    |
+| cargo: String                  |         | nome: String                  |
+| dataContratacao: Date          |         | periodo: String               |
+| dataNascimento: Date           |         +-------------------------------+
++--------------------------------+                  |
+       ^                                            | 1:N
+       |                                            |
+       |                                            |
+       | 1:N                                        |
++--------------------------------+                  |
+|             ponto              |<-----------------+
++--------------------------------+
+| _id:Yours: ObjectId            |
+| data: Date                     |
+| nome: String                   |
+| horaEntrada: String            |
+| horaSaida: String              |
++--------------------------------+
+```

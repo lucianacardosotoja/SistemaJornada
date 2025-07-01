@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrar Ponto</title>
+  <link rel="stylesheet" href="./../../css/style.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <h1>Registrar Ponto</h1>
+
+  <div style="text-align: center;">
+    <p>Relógio atual:</p>
+    <span id="relogio">--:--:--</span><br><br>
+    <button id="btnRegistrar">Registrar Ponto</button>
+  </div>
+
+  <ul id="listaRegistros"></ul>
+
+  <div id="footer-container"></div>
+
+  <script>
+      async function loadComponents() {
+          const headerResponse = await fetch('./../../components/header.html');
+          const headerContent = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerContent;
+          
+          const footerResponse = await fetch('./../../components/footer.html');
+          const footerContent = await footerResponse.text();
+          document.getElementById('footer-container').innerHTML = footerContent;
+      }
+      loadComponents();
+  </script>
+  <script type="module" src="./../../js/funcionario/registrar_ponto_func.js"></script>
+</body>
+</html>

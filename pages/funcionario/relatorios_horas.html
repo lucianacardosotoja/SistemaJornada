@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Mensal</title>
+  <link rel="stylesheet" href="./../../css/style.css"> </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  <h1>Relatório Mensal de Horas</h1>
+
+  <label for="mes">Selecione o mês:</label>
+  <input type="month" id="mes" />
+
+  <button id="btnBuscar">Buscar Relatório</button>
+
+  <h2>Total de horas no mês: <span id="totalHoras">--:--</span></h2>
+
+  <ul id="relatorioLista"></ul>
+  <div id="footer-container"></div>
+  <script>
+      async function loadComponents() {
+          const headerResponse = await fetch('./../../components/header.html');
+          const headerContent = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerContent;
+          
+          const footerResponse = await fetch('./../../components/footer.html');
+          const footerContent = await footerResponse.text();
+          document.getElementById('footer-container').innerHTML = footerContent;
+      }
+      loadComponents();
+  </script>
+  <script type="module" src="./../../js/funcionario/relatorios_horas.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Relatório Mensal - Administração</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./../../css/style.css"> </style>
+</head>
+<body>
+    <div id="header-container"></div>
+  <h1>Relatório Mensal - Funcionários</h1>
+
+  <label for="mesano">Selecione o mês:</label>
+  <input type="month" id="mesano" />
+  <button id="btnGerar">Gerar Relatório</button>
+
+  <div id="mensagem" role="alert" aria-live="polite" style="margin-top:10px;"></div>
+
+  <section id="relatorio" style="margin-top:20px;">
+    <h2>Resumo do Mês</h2>
+    <p><strong>Total de funcionários:</strong> <span id="totalFuncionarios">-</span></p>
+    <p><strong>Quantidade de administradores:</strong> <span id="totalAdmins">-</span></p>
+    <p><strong>Funcionário com mais horas:</strong> <span id="maisHoras">-</span></p>
+    <p><strong>Funcionário com menos horas:</strong> <span id="menosHoras">-</span></p>
+    <p><strong>Média de horas trabalhadas:</strong> <span id="mediaHoras">-</span></p>
+    <p><strong>Funcionários mais escalados:</strong> <span id="maisEscalados">-</span></p>
+  </section>
+  <div id="footer-container"></div>
+  <script>
+      async function loadComponents() {
+          const headerResponse = await fetch('./../../components/header.html');
+          const headerContent = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerContent;
+          
+          const footerResponse = await fetch('./../../components/footer.html');
+          const footerContent = await footerResponse.text();
+          document.getElementById('footer-container').innerHTML = footerContent;
+      }
+      loadComponents();
+  </script>
+  <script type="module" src="./../../js/admin/relatorios_funcinarios.js"></script>
+</body>
+</html>

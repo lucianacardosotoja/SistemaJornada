@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Funcionário</title>
+    <link rel="stylesheet" href="./../css/style.css"> </style>
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="cadastro-container">
+        <h2>Cadastrar Novo Funcionário</h2>
+        
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome">
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <br>
+
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento">
+        <br>
+        
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo">
+        <br>
+        
+        <label for="data_contratacao">Data de Entrada:</label>
+        <input type="date" id="data_contratacao">
+        <br>
+
+        <label for="tipo_login">Escolha uma opção:</label>
+        <select id="tipo_login" name="tipo_login">
+          <option value="admin">Administrador</option>
+          <option value="funcionario">Funcionário</option>
+        </select>
+        <br>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha">
+        <br>
+       
+        <button id="btnEnviar">Cadastrar</button>
+    
+    </div>
+    <div id="footer-container"></div>
+    <script>
+        async function loadComponents() {
+            const headerResponse = await fetch('./../components/header.html');
+            const headerContent = await headerResponse.text();
+            document.getElementById('header-container').innerHTML = headerContent;
+            
+            const footerResponse = await fetch('./../components/footer.html');
+            const footerContent = await footerResponse.text();
+            document.getElementById('footer-container').innerHTML = footerContent;
+        }
+        loadComponents();
+    </script>
+    <script src="./../js/cadastro.js" type="module"></script>
+    <script src="./../js/login.js" type="module"></script>
+</body>
+</html>

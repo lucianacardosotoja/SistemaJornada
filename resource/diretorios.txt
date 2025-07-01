@@ -1,0 +1,41 @@
+SistemaJornada/
+├── index.html    
+├── readme.md                     
+├── css/
+│   ├── style.css 
+├── components/
+│   ├── header.html                 
+│   ├── header_login.html           
+│   └── footer.html                 
+├── firebase/
+│   └── firebaseConfig.js           
+├── js/
+│   ├── login.js                    
+│   ├── recuperar_acesso.js         
+│   ├── cadastro.js                 
+│   ├── funcionario/
+│   │   ├── relatorios_horas.js         
+│   │   ├── escalas_semanais_func.js    
+│   │   └── registro_ponto_func.js      
+│   └── admin/
+│       ├── ajustar_pontos.js           
+│       ├── listar_funcionarios.js      
+│       ├── escalas_semanais_admin.js   
+│       └── relatorios_funcionarios.js  
+├── pages/
+│   ├── admin/
+│   │   ├── ajustar_pontos.html         
+│   │   ├── escalas_semanais_admin.html
+│   │   ├── listar_funcionarios.html    
+│   │   ├── relatorios_funcionarios.html
+│   │   └── home_page_admin.html        
+│   ├── funcionario/
+│   │   ├── escalas_semanais_func.html  
+│   │   ├── registro_ponto_func.html    
+│   │   ├── relatorios_horas.html       
+│   │   └── home_page_func.html         
+│   ├── cadastro.html                  
+│   └── recuperar_acesso.html  
+├── resource/
+│   ├──  banco_dados.txt  
+│   └──  diretorios.txt          

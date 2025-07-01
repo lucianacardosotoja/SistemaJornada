@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Escalas dos Funcionários</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./../../css/style.css" />
+</head>
+<body>
+    <div id="header-container"></div>
+  <div class="container">
+    <header>
+      <h1>Escalas dos Funcionários</h1>
+      <div class="filtros">
+        <input type="month" id="mesano" />
+        <button id="btnGerar">Gerar</button>
+      </div>
+    </header>
+
+    <div class="message" id="mensagem"></div>
+    <div id="calendario"></div>
+  </div>
+
+  <!-- Modal para Adicionar ou Editar Escala -->
+  <div id="modalEscala" class="modal">
+    <div class="modal-content">
+      <h3 id="modalTitulo">Adicionar Escala</h3>
+      <form id="formEscala">
+        <input type="hidden" id="escalaId">
+        <input type="hidden" id="escalaData">
+
+        <label for="funcionarioNome">Nome:</label>
+        <input type="text" id="funcionarioNome" required placeholder="Nome do funcionário">
+
+        <label for="periodo">Período:</label>
+        <select id="periodo" required>
+          <option value="">Selecione</option>
+          <option value="Manhã">Manhã</option>
+          <option value="Tarde">Tarde</option>
+          <option value="Noite">Noite</option>
+        </select>
+
+        <div class="modal-actions">
+          <button type="button" id="btnCancelar">Cancelar</button>
+          <button type="submit" id="btnSalvar">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+
+  <script>
+    async function loadComponents() {
+      const headerResponse = await fetch('./../../components/header.html');
+      const headerContent = await headerResponse.text();
+      document.getElementById('header-container').innerHTML = headerContent;
+
+      const footerResponse = await fetch('./../../components/footer.html');
+      const footerContent = await footerResponse.text();
+      document.getElementById('footer-container').innerHTML = footerContent;
+    }
+    loadComponents();
+  </script>
+  <script  type='module' src="./../../js/admin/escalas_semanais_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Funcionário</title>
+  <link rel="stylesheet" href="./../../css/style.css"> </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  <h1>Bem-vindo, Funcionário!</h1>
+  <p>Escolha uma opção:</p>
+  <ul>
+    <li><a href="./registrar_ponto_func.html">Registrar Ponto</a></li>
+    <li><a href="./escalas_semanais_func.html">Escalas Semanais</a></li>
+    <li><a href="./relatorios_horas.html">Gerar Relatórios</a></li>
+  </ul>
+  <div id="footer-container"></div>
+  <script>
+      async function loadComponents() {
+          const headerResponse = await fetch('./../../components/header.html');
+          const headerContent = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerContent;
+          
+          const footerResponse = await fetch('./../../components/footer.html');
+          const footerContent = await footerResponse.text();
+          document.getElementById('footer-container').innerHTML = footerContent;
+      }
+      loadComponents();
+  </script>
+</body>
+</html>
