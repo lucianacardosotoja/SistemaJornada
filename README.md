@@ -112,7 +112,7 @@ Pesquisa qualitativa, de caráter acadêmico, utilizando:
     
 Clone o repositório:
 ```
-        git clone https://github.com/seu-usuario/seu-projeto.git
+        git clone https://github.com/lucianacardosotoja/SistemaJornada.git
 ```
 
 Configure o Firebase:
